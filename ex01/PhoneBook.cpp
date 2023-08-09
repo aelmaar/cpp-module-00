@@ -6,7 +6,7 @@
 /*   By: ael-maar <ael-maar@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 16:17:10 by ael-maar          #+#    #+#             */
-/*   Updated: 2023/08/09 16:23:47 by ael-maar         ###   ########.fr       */
+/*   Updated: 2023/08/09 18:13:26 by ael-maar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ void PhoneBook::AddField(std::string message, void (Contact::*AddToContact)(std:
 // ADD COMMAND
 void PhoneBook:: Add()
 {
-    if (contact_size == 8 || (contact_pos + 1) == 8)
+    if ((contact_pos + 1) == 8)
         contact_pos = -1;
     contact_pos++;
     AddField("Enter your first name", &Contact::SetFname, &(contacts[contact_pos]));
@@ -81,7 +81,8 @@ void PhoneBook:: Add()
     AddField("Enter your nickname", &Contact::SetNickname, &(contacts[contact_pos]));
     AddField("Enter your phone number", &Contact::SetPhoneNumber, &(contacts[contact_pos]));
     AddField("Enter your darkest secret", &Contact::SetDarkestSecret, &(contacts[contact_pos]));
-    contact_size++;
+    if (contact_size != 8)
+      contact_size++;
 }
 
 // SEARCH COMMAND
