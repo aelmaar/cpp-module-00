@@ -6,7 +6,7 @@
 /*   By: ael-maar <ael-maar@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 20:43:25 by ael-maar          #+#    #+#             */
-/*   Updated: 2023/08/09 15:16:57 by ael-maar         ###   ########.fr       */
+/*   Updated: 2023/08/10 10:57:10 by ael-maar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ int Account::getNbWithdrawals(void)
 void Account::displayAccountsInfos(void)
 {
     _displayTimestamp();
-    std::cout << " accounts:" << getNbAccounts() << ";total:" << getTotalAmount() << ";desposits:" \
+    std::cout << " accounts:" << getNbAccounts() << ";total:" << getTotalAmount() << ";deposits:" \
     << getNbDeposits() << ";withdrawals:" << getNbWithdrawals() << std::endl;
 }
 
@@ -95,7 +95,7 @@ void Account::displayAccountsInfos(void)
 void Account::displayStatus(void) const
 {
     Account::_displayTimestamp();
-    std::cout << " index:" << _accountIndex << ";amount:" << _amount << ";desposits:"\
+    std::cout << " index:" << _accountIndex << ";amount:" << _amount << ";deposits:"\
     << _nbDeposits << ";withdrawals:" << _nbWithdrawals << std::endl;
 }
 
