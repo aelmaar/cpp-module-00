@@ -6,7 +6,7 @@
 /*   By: ael-maar <ael-maar@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 16:17:10 by ael-maar          #+#    #+#             */
-/*   Updated: 2023/08/09 18:13:26 by ael-maar         ###   ########.fr       */
+/*   Updated: 2023/08/10 10:40:00 by ael-maar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,10 +59,12 @@ void  PhoneBook::PrintInfoContact(Contact *contact)
 void PhoneBook::AddField(std::string message, void (Contact::*AddToContact)(std::string), Contact* contact)
 {
     std::string field;
-    while (field.empty())
+    while (field.empty() && !std::cin.eof())
     {
         std::cout << message << ": ";
         std::getline(std::cin, field);
+        if (std::cin.eof())
+          return ;
         if (field.empty())
             std::cout << "Please fill the field" << std::endl;
         else
@@ -99,7 +101,9 @@ void  PhoneBook:: Search()
     while (!is_valid_index)
     {
       std::cout << "Enter the contact index: ";
-      getline(std::cin, contact_index);
+      std::getline(std::cin, contact_index);
+      if (std::cin.eof())
+        return ;
       if ((contact_index.length() == 1)
         && isdigit(contact_index[0])
         && (int(contact_index[0]) - 48) < contact_size)
