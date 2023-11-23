@@ -6,4 +6,4 @@ Module 00 serves as an introduction to fundamental concepts in C++ programming. 
 ## Usage
 1. Clone the repository
 2. Navigate to the exercises directory and run `make`
-3. The exercises details is in the `subject.pdf`
+3. The exercises details is in the `en.subject.pdf`
